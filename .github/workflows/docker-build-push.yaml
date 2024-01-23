@@ -16,6 +16,9 @@ jobs:
     - name: Set up Docker Buildx
       uses: docker/setup-buildx-action@v1
 
+    - name: Copy Dockerfile to the build context
+      run: cp E:/Users/visual\ studio/Master_Devops/Dockerfile.docker .
+
     - name: Build and push Docker image
       env:
         DOCKER_USERNAME: ${{ secrets.DOCKER_HUB_USERNAME }}
@@ -23,4 +26,5 @@ jobs:
       run: |
         echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
         docker buildx create --use
-        docker buildx build -t franstumani/masterdevops:latest --push -f  .
+        docker buildx build -t franstumani/masterdevops:latest --push .
+
