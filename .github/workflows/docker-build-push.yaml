@@ -24,3 +24,4 @@ jobs:
         echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
         docker buildx create --use
         docker buildx build -t franstumani/masterdevops:latest --push .
+
