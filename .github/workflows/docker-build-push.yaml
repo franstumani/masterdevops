@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main  # Adjust the branch name if needed
-
 jobs:
   build:
     runs-on: ubuntu-latest
