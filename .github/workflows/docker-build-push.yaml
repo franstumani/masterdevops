@@ -18,8 +18,8 @@ jobs:
 
     - name: Build and push Docker image
       env:
-        DOCKER_USERNAME: ${{ secrets.franstumani }}
-        DOCKER_PASSWORD: ${{ secrets.1234fT!@#$ }}
+        DOCKER_USERNAME: ${{ secrets.DOCKER_HUB_USERNAME }}
+        DOCKER_PASSWORD: ${{ secrets.DOCKER_HUB_PASSWORD }}
       run: |
         echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
         docker buildx create --use
